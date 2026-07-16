@@ -284,6 +284,7 @@
     }
 
     .intake input,
+    .intake select,
     .intake textarea {
       width: 100%;
       border: 1px solid var(--line);
@@ -296,6 +297,20 @@
     .intake textarea {
       min-height: 110px;
       resize: vertical;
+    }
+
+    .intake .check-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      margin-top: 12px;
+      font-weight: 400;
+    }
+
+    .intake .check-row input {
+      width: auto;
+      min-height: 0;
+      margin-top: 3px;
     }
 
     .helper {
@@ -477,7 +492,7 @@
           <p class="section-lead">Use this form to send the details I need. I will reply and schedule a time if the audit is a fit.</p>
           <p>This is a small introductory offer while I shape the service. The best fit is a business owner or manager who can point to one repeat process that feels slower than it should be.</p>
         </div>
-        <form class="intake" action="https://formspree.io/f/xbdverlj" method="POST">
+        <form class="intake" id="audit-request" action="https://formspree.io/f/xbdverlj" method="POST">
           <input type="hidden" name="_subject" value="AI Workflow Audit Request">
           <input type="hidden" name="service" value="AI Workflow Audit">
 
@@ -487,8 +502,25 @@
           <label for="business">Business name</label>
           <input id="business" name="business" autocomplete="organization">
 
-          <label for="contact">Email or phone</label>
-          <input id="contact" name="contact" autocomplete="email" required>
+          <label for="email">Email address</label>
+          <input id="email" name="email" type="email" autocomplete="email">
+
+          <label for="phone">Phone number</label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel">
+          <p class="helper">Please provide at least an email address or phone number.</p>
+
+          <label for="contact_method">How would you prefer I contact you?</label>
+          <select id="contact_method" name="preferred_contact_method" required>
+            <option value="">Choose one</option>
+            <option value="Email">Email</option>
+            <option value="Text message">Text message</option>
+            <option value="Phone call">Phone call</option>
+          </select>
+
+          <label class="check-row" for="text_consent">
+            <input id="text_consent" name="text_message_consent" type="checkbox" value="Yes">
+            <span>You may text me about this audit request. Message and data rates may apply. Reply STOP to opt out.</span>
+          </label>
 
           <label for="work">What repeat work is draining your time?</label>
           <textarea id="work" name="work" required placeholder="Examples: spreadsheets, customer follow-up, scheduling, paperwork, reports, emails, quoting, invoicing"></textarea>
@@ -508,6 +540,47 @@
   <footer>
     <div class="wrap">Brooke Holz | AI Workflow Audits for Small Businesses</div>
   </footer>
+
+  <script>
+    const auditForm = document.getElementById('audit-request');
+    const emailField = document.getElementById('email');
+    const phoneField = document.getElementById('phone');
+    const contactMethod = document.getElementById('contact_method');
+    const textConsent = document.getElementById('text_consent');
+
+    auditForm.addEventListener('submit', (event) => {
+      emailField.setCustomValidity('');
+      phoneField.setCustomValidity('');
+      contactMethod.setCustomValidity('');
+
+      if (!emailField.value.trim() && !phoneField.value.trim()) {
+        event.preventDefault();
+        emailField.setCustomValidity('Please provide an email address or phone number.');
+        emailField.reportValidity();
+        return;
+      }
+
+      if (contactMethod.value === 'Email' && !emailField.value.trim()) {
+        event.preventDefault();
+        emailField.setCustomValidity('Please enter an email address for email contact.');
+        emailField.reportValidity();
+        return;
+      }
+
+      if ((contactMethod.value === 'Text message' || contactMethod.value === 'Phone call') && !phoneField.value.trim()) {
+        event.preventDefault();
+        phoneField.setCustomValidity('Please enter a phone number for this contact method.');
+        phoneField.reportValidity();
+        return;
+      }
+
+      if (contactMethod.value === 'Text message' && !textConsent.checked) {
+        event.preventDefault();
+        contactMethod.setCustomValidity('Please check the text-message consent box or choose another contact method.');
+        contactMethod.reportValidity();
+      }
+    });
+  </script>
 
 </body>
 </html>
