@@ -142,6 +142,29 @@
       background: #fff;
     }
     .addon h3 { margin-bottom: 6px; }
+    .care {
+      margin-top: 28px;
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+    }
+    .care h3 { margin-bottom: 6px; }
+    .care-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+    .care-card {
+      padding: 18px 18px 16px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--wash);
+    }
+    .care-card .amount { margin: 8px 0 4px; color: var(--navy); font-size: 26px; font-weight: 900; letter-spacing: -.03em; }
+    .care-card ul { margin: 10px 0 0; padding-left: 18px; color: var(--muted); font-size: 14px; }
+    .care-card li { margin: 5px 0; }
     .proof-strip {
       display: grid;
       grid-template-columns: repeat(3, minmax(0,1fr));
@@ -177,14 +200,14 @@
     footer a { color: #9ef6e8; }
     @media (max-width: 980px) {
       .pkg-grid, .pkg-grid.four { grid-template-columns: 1fr 1fr; }
-      .proof-strip { grid-template-columns: 1fr; }
+      .proof-strip, .care-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 860px) {
       .nav-links a:not(.nav-cta) { display: none; }
       .offer { grid-template-columns: 1fr; }
     }
     @media (max-width: 640px) {
-      .pkg-grid, .pkg-grid.four, .proof-strip { grid-template-columns: 1fr; }
+      .pkg-grid, .pkg-grid.four, .proof-strip, .care-grid { grid-template-columns: 1fr; }
       .wrap { width: min(100% - 30px, 1120px); }
       .brand-link img { width: 112px; }
       section { padding: 56px 0; }
@@ -377,6 +400,47 @@
           </article>
         </div>
         <p class="hours">Brooke’s hours are direction and review. Agents on your account do the production work in between, so timelines match the team on that package. After-hours is below.</p>
+        <aside class="care" id="care">
+          <span class="pkg-tag">After it’s live</span>
+          <h3>Train your people, keep a care month, or call when you need us.</h3>
+          <p class="lead" style="margin-top:8px">Once the build is running, you choose. Training and care depend on how much we actually built — the audit writes that into the proposal. Listed care is half the build package. The live agents stay on your account.</p>
+          <div class="care-grid">
+            <article class="care-card">
+              <span class="pkg-tag">Default</span>
+              <h3>Train as we go</h3>
+              <p class="amount">Included</p>
+              <p class="cadence">In the monthly build</p>
+              <ul>
+                <li>Each control ships documented</li>
+                <li>Your people learn on the live work</li>
+                <li>Optional concentrated handoff: <strong>1 extra month at the care rate</strong> — not another full build month</li>
+              </ul>
+            </article>
+            <article class="care-card">
+              <span class="pkg-tag">Ongoing</span>
+              <h3>System care</h3>
+              <p class="amount">Half</p>
+              <p class="cadence">Of the build package you were on</p>
+              <ul>
+                <li>After Focused: <strong>$5,000/mo</strong> · Brooke ~3–4 hrs/week · 1 agent</li>
+                <li>After Dedicated: <strong>$7,500/mo</strong> · Brooke ~5–6 hrs/week · 2 agents</li>
+                <li>After Full: <strong>$15,000/mo</strong> · Brooke ~9–10 hrs/week · 4 agents</li>
+                <li>Monitoring, fixes, small changes — not a new build-out</li>
+              </ul>
+            </article>
+            <article class="care-card">
+              <span class="pkg-tag">As needed</span>
+              <h3>Call when you need it</h3>
+              <p class="amount">$250/hr</p>
+              <p class="cadence">15-minute increments</p>
+              <ul>
+                <li>You run it; we come in for a change or a break</li>
+                <li>Fits a finished First control, or a team that took the handoff</li>
+                <li>After 4:30 p.m. or weekend: 20% more</li>
+              </ul>
+            </article>
+          </div>
+        </aside>
       </div>
     </section>
 
@@ -384,7 +448,7 @@
       <div class="wrap">
         <p class="kicker">How we work</p>
         <h2>Weekday hours. Evenings if you want them.</h2>
-        <p class="lead">Build time is Monday–Thursday, plus Friday wrap, Central time. Work after 4:30 p.m. or on a weekend is billed at 20% more. If you want nights and weekends covered as a standing arrangement, that is 20% of that month’s package — only if you choose it. Dedicated and Full are daytime capacity unless you add that.</p>
+        <p class="lead">Build time is Monday–Thursday, plus Friday wrap, Central time. Work after 4:30 p.m. or on a weekend is billed at 20% more. If you want nights and weekends covered as a standing arrangement, that is 20% of that month’s package — only if you choose it. Build months and care months are daytime unless you add that.</p>
         <p class="lead">What we build is yours. The audit is how we recommend a zone. Request it when you are ready.</p>
         <div class="hero-actions" style="margin-top:28px">
           <a class="button primary" href="index.html#signup">Request a BOAZ Audit</a>
