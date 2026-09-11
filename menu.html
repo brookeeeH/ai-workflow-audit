@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BOAZ | Packages and prices</title>
+  <meta name="description" content="BOAZ packages: a $250 audit, then set prices for websites, social, and custom AI agent systems. No guessing. We seat you on the audit call.">
+  <meta property="og:title" content="BOAZ | Packages and prices">
+  <meta property="og:description" content="Set packages for websites, social, and custom AI agent systems. Start with the $250 BOAZ Audit.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/boaz-logo.jpg">
+  <meta name="theme-color" content="#082c5c">
+  <style>
+    :root {
+      color-scheme: light;
+      --navy: #082c5c;
+      --blue: #075fa5;
+      --teal: #00a7a0;
+      --aqua: #09cdb4;
+      --ink: #102337;
+      --muted: #526273;
+      --line: #dbe4e8;
+      --wash: #f3f8f8;
+      --paper: #ffffff;
+      --warm: #fff9ed;
+      --gold: #c68b2c;
+      --shadow: 0 18px 48px rgba(8, 44, 92, .10);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+    img { max-width: 100%; display: block; }
+    .wrap { width: min(1120px, calc(100% - 44px)); margin: 0 auto; }
+    .skip-link { position: absolute; left: -9999px; }
+    .skip-link:focus { left: 16px; top: 16px; z-index: 99; background: #fff; padding: 10px; }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(8, 44, 92, .10);
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(12px);
+    }
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand-link { display: inline-flex; align-items: center; text-decoration: none; }
+    .brand-link img { width: 132px; height: 58px; object-fit: cover; object-position: center 67%; }
+    .nav-links { display: flex; align-items: center; gap: 24px; }
+    .nav-links a { color: var(--muted); font-size: 14px; font-weight: 700; text-decoration: none; }
+    .nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--navy); }
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 48px;
+      padding: 12px 20px;
+      border: 1px solid transparent;
+      border-radius: 7px;
+      font: inherit;
+      font-weight: 800;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .button.primary { background: linear-gradient(135deg, var(--blue), var(--teal)); color: #fff; box-shadow: 0 10px 24px rgba(0, 117, 146, .25); }
+    .button.secondary { border-color: rgba(8,44,92,.18); color: var(--navy); background: #fff; }
+    .button.dark { background: var(--navy); color: #fff; }
+    .hero {
+      color: #fff;
+      background:
+        radial-gradient(circle at 78% 20%, rgba(9,205,180,.28), transparent 25%),
+        linear-gradient(120deg, #061e43 0%, #083c6e 58%, #007e8b 100%);
+    }
+    .hero-copy { padding: 72px 0 64px; }
+    .eyebrow {
+      margin: 0 0 18px;
+      color: #9ef6e8;
+      font-size: 14px;
+      font-weight: 850;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    h1 { margin: 0; max-width: 800px; font-size: clamp(36px, 5vw, 58px); line-height: 1.05; letter-spacing: -.04em; }
+    .hero-copy > p:not(.eyebrow) { max-width: 690px; margin: 22px 0 0; color: #e5f3f5; font-size: 19px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 28px; }
+    section { padding: 72px 0; }
+    .band { background: var(--wash); border-block: 1px solid var(--line); }
+    .kicker { margin: 0 0 10px; color: var(--teal); font-size: 13px; font-weight: 850; letter-spacing: .11em; text-transform: uppercase; }
+    h2 { max-width: 760px; margin: 0; color: var(--navy); font-size: clamp(30px, 4vw, 44px); line-height: 1.12; letter-spacing: -.025em; }
+    h3 { margin: 0 0 8px; color: var(--navy); font-size: 22px; }
+    .lead { max-width: 790px; margin: 18px 0 0; color: var(--muted); font-size: 18px; }
+    .offer { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr); gap: 40px; align-items: start; }
+    .checklist { padding: 0; margin: 24px 0 0; list-style: none; }
+    .checklist li { position: relative; margin: 12px 0; padding-left: 31px; }
+    .checklist li::before { content: "✓"; position: absolute; left: 0; top: 0; color: var(--teal); font-weight: 900; }
+    .price-box { padding: 28px; border: 1px solid rgba(0,167,160,.5); border-radius: 16px; background: #fff; box-shadow: var(--shadow); }
+    .price-label { margin: 0; color: var(--muted); font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: .07em; }
+    .price { margin: 8px 0; color: var(--navy); font-size: 48px; line-height: 1; font-weight: 900; letter-spacing: -.04em; }
+    .price-note { margin: 0 0 16px; color: var(--muted); }
+    .guarantee { padding: 15px; border-radius: 9px; border: 1px solid #ead5a4; color: #563b0b; background: var(--warm); font-weight: 700; }
+    .pkg-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px; margin-top: 34px; }
+    .pkg-grid.four { grid-template-columns: repeat(4, minmax(0,1fr)); }
+    .pkg {
+      display: flex;
+      flex-direction: column;
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+      box-shadow: 0 8px 28px rgba(8,44,92,.045);
+    }
+    .pkg.featured {
+      border: 2px solid var(--teal);
+      box-shadow: 0 14px 36px rgba(0,167,160,.16);
+    }
+    .pkg-tag { color: var(--blue); font-size: 12px; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+    .pkg.featured .pkg-tag { color: var(--teal); }
+    .pkg .amount { margin: 10px 0 4px; color: var(--navy); font-size: 32px; font-weight: 900; letter-spacing: -.03em; }
+    .pkg .cadence { margin: 0 0 14px; color: var(--muted); font-size: 14px; font-weight: 700; }
+    .pkg ul { margin: 0 0 16px; padding-left: 18px; color: var(--muted); }
+    .pkg li { margin: 6px 0; }
+    .pkg .bound { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+    .addon {
+      margin-top: 20px;
+      padding: 24px 26px;
+      border: 1px dashed rgba(8,44,92,.22);
+      border-radius: 14px;
+      background: #fff;
+    }
+    .addon h3 { margin-bottom: 6px; }
+    .hours { margin-top: 22px; color: var(--muted); }
+    footer { padding: 34px 0; color: #cadae8; background: #061e43; }
+    .footer-row { display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+    .footer-brand { color: #fff; font-size: 23px; font-weight: 900; letter-spacing: .08em; }
+    footer p { margin: 3px 0 0; }
+    footer a { color: #9ef6e8; }
+    @media (max-width: 980px) {
+      .pkg-grid, .pkg-grid.four { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 860px) {
+      .nav-links a:not(.nav-cta) { display: none; }
+      .offer { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .pkg-grid, .pkg-grid.four { grid-template-columns: 1fr; }
+      .wrap { width: min(100% - 30px, 1120px); }
+      .brand-link img { width: 112px; }
+      section { padding: 56px 0; }
+      .footer-row { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="topbar">
+    <nav class="nav wrap" aria-label="Primary">
+      <a class="brand-link" href="index.html" aria-label="BOAZ home"><img src="assets/boaz-logo.jpg" alt="BOAZ"></a>
+      <div class="nav-links">
+        <a href="index.html#approach">Approach</a>
+        <a href="menu.html" aria-current="page">Packages</a>
+        <a href="index.html#proof">Experience</a>
+        <a class="button primary nav-cta" href="index.html#signup">Request an audit</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="hero-copy wrap">
+        <p class="eyebrow">The menu</p>
+        <h1>Set packages. No guessing.</h1>
+        <p>Start with the audit. On that call we seat you — website, systems, or both. These are the dishes. Ongoing cost is on the card. After-hours is extra. This is not a free pick-your-brain conversation.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="index.html#signup">Request a BOAZ Audit</a>
+          <a class="button secondary" href="#presence">Websites</a>
+          <a class="button secondary" href="#systems">AI agent systems</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="audit">
+      <div class="wrap offer">
+        <div>
+          <p class="kicker">Start here</p>
+          <h2>The BOAZ Audit</h2>
+          <p class="lead">A 45-minute look at where time is leaking. You leave with written findings, ranked fixes, and a clear recommendation from this menu. The audit is how we tell you which package you need — not a custom quote from scratch every time.</p>
+          <ul class="checklist">
+            <li>Review of one or two current workflows</li>
+            <li>Written summary of the largest bottlenecks</li>
+            <li>Top three practical fixes</li>
+            <li>One usable first improvement</li>
+            <li>Which package fits — and what does not</li>
+          </ul>
+        </div>
+        <aside class="price-box" aria-label="BOAZ Audit price">
+          <p class="price-label">The door</p>
+          <p class="price">$250</p>
+          <p class="price-note">Focused review, written findings, and a practical first improvement.</p>
+          <div class="guarantee">If the audit cannot identify at least five hours per month of realistic time savings, the audit fee will be refunded.</div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="presence">
+      <div class="wrap">
+        <p class="kicker">Websites</p>
+        <h2>Websites &amp; digital presence</h2>
+        <p class="lead">For shops, makers, and local brands that need a site customers can actually use — not a template that hides inventory, tax, or pickup.</p>
+        <div class="pkg-grid">
+          <article class="pkg">
+            <span class="pkg-tag">Starter site</span>
+            <p class="amount">$4,500</p>
+            <p class="cadence">One-time</p>
+            <ul>
+              <li>Clear brochure or inquire site</li>
+              <li>Your domain, mobile, contact</li>
+              <li>Simple catalog if you need it</li>
+            </ul>
+            <p class="bound">No live checkout, tax, shipping, or pickup. That is the Signature storefront.</p>
+          </article>
+          <article class="pkg featured">
+            <span class="pkg-tag">The storefront</span>
+            <h3>Signature storefront</h3>
+            <p class="amount">$15,000</p>
+            <p class="cadence">One-time · two review rounds</p>
+            <ul>
+              <li>Branded site and live catalog</li>
+              <li>Secure checkout</li>
+              <li>Tax, ship, or pickup</li>
+              <li>Stories and an owner path</li>
+              <li>One catalog import</li>
+            </ul>
+            <p class="bound">Not unlimited extra calls, photography, ads, or social posting.</p>
+          </article>
+          <article class="pkg">
+            <span class="pkg-tag">Ongoing</span>
+            <h3>Store care</h3>
+            <p class="amount">$350<span style="font-size:18px;font-weight:800">/mo</span></p>
+            <p class="cadence">or $225/hour in 15-minute increments</p>
+            <ul>
+              <li>Catalog batches</li>
+              <li>Small copy and image fixes</li>
+              <li>Checkout watch</li>
+            </ul>
+            <p class="bound">Not a redesign, a new platform, or after-hours coverage.</p>
+          </article>
+        </div>
+        <aside class="addon" id="social">
+          <span class="pkg-tag">Add-on · not the front door</span>
+          <h3>Social systems &amp; posting</h3>
+          <p class="lead" style="margin-top:8px">$1,500/month for one platform (Facebook). $2,500/month for two. Calendar, posts, and light engagement. Not ads. We recommend this only when the audit says you need it — for example a brand or event business that also needs systems underneath.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="band" id="systems">
+      <div class="wrap">
+        <p class="kicker">Systems</p>
+        <h2>Automation &amp; AI agent systems</h2>
+        <p class="lead">For companies drowning in retyping. People keep the tools they already use. Agents do the chasing. Humans approve anything that leaves the building. Built first inside a real operation: a 10-truck plan that is now about 30 trucks, with three full-time people under 40 hours a week.</p>
+        <div class="pkg-grid four">
+          <article class="pkg">
+            <span class="pkg-tag">First control</span>
+            <p class="amount">$6,000</p>
+            <p class="cadence">One-time</p>
+            <ul>
+              <li>One live workflow</li>
+              <li>In the tools you already use</li>
+              <li>Documented so it can be run</li>
+            </ul>
+            <p class="bound">Not a hire. Not unlimited.</p>
+          </article>
+          <article class="pkg">
+            <span class="pkg-tag">Focused monthly</span>
+            <p class="amount">$10,000</p>
+            <p class="cadence">Per month · about 6–8 hours/week</p>
+            <ul>
+              <li>One department</li>
+              <li>Monitoring and fixes</li>
+              <li>One new control per month</li>
+            </ul>
+            <p class="bound">Not after-hours. Not unlimited.</p>
+          </article>
+          <article class="pkg featured">
+            <span class="pkg-tag">Most start here</span>
+            <h3>Dedicated monthly</h3>
+            <p class="amount">$15,000</p>
+            <p class="cadence">Per month · about 10–12 hours/week</p>
+            <ul>
+              <li>Build, integration, documentation</li>
+              <li>Fix what we find in live use</li>
+              <li>About 6–9 months to fine-tuning</li>
+            </ul>
+            <p class="bound">Not unlimited. Not on-call. Licenses stay in your name.</p>
+          </article>
+          <article class="pkg">
+            <span class="pkg-tag">Full capacity</span>
+            <p class="amount">$30,000</p>
+            <p class="cadence">Per month · about 18–20 hours/week</p>
+            <ul>
+              <li>Primary BOAZ client that month</li>
+              <li>Multi-department</li>
+              <li>Weekly working session</li>
+            </ul>
+            <p class="bound">One client at this size at a time.</p>
+          </article>
+        </div>
+        <p class="hours">Large-company work is sold by capacity, not by a shrug. Hours are on the card so the package has a ceiling. Third-party tools and subscriptions stay in your name and are approved first.</p>
+      </div>
+    </section>
+
+    <section id="hours">
+      <div class="wrap">
+        <p class="kicker">Boundaries</p>
+        <h2>Business hours. After-hours costs extra.</h2>
+        <p class="lead">Work is Monday–Thursday, and Friday wrap, Central time. After 4:30 p.m., weekends, or a genuine fire is billed at 20% more than the work itself. If you want nights and weekends covered as a standing arrangement, that on-call coverage is 20% of that month’s package — only if you choose it. It is not baked into Dedicated or Full.</p>
+        <p class="lead">Everything we build is yours. This is not a hire, and it is not unlimited on-call. The audit is how we pick the dish. Request it when you are ready.</p>
+        <div class="hero-actions" style="margin-top:28px">
+          <a class="button primary" href="index.html#signup">Request a BOAZ Audit</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <div>
+        <div class="footer-brand">BOAZ</div>
+        <p>Clearer systems. Restored capacity.</p>
+      </div>
+      <p>© <span id="year"></span> BOAZ. Central City, Nebraska. · <a href="index.html">Home</a></p>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
