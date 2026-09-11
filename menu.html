@@ -142,6 +142,33 @@
       background: #fff;
     }
     .addon h3 { margin-bottom: 6px; }
+    .proof-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 16px;
+      margin-top: 28px;
+    }
+    .proof-stat {
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+    }
+    .proof-stat strong {
+      display: block;
+      color: var(--navy);
+      font-size: 22px;
+      line-height: 1.2;
+      letter-spacing: -.03em;
+      font-weight: 900;
+    }
+    .proof-stat span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
     .hours { margin-top: 22px; color: var(--muted); }
     footer { padding: 34px 0; color: #cadae8; background: #061e43; }
     .footer-row { display: flex; justify-content: space-between; align-items: center; gap: 24px; }
@@ -150,13 +177,14 @@
     footer a { color: #9ef6e8; }
     @media (max-width: 980px) {
       .pkg-grid, .pkg-grid.four { grid-template-columns: 1fr 1fr; }
+      .proof-strip { grid-template-columns: 1fr; }
     }
     @media (max-width: 860px) {
       .nav-links a:not(.nav-cta) { display: none; }
       .offer { grid-template-columns: 1fr; }
     }
     @media (max-width: 640px) {
-      .pkg-grid, .pkg-grid.four { grid-template-columns: 1fr; }
+      .pkg-grid, .pkg-grid.four, .proof-strip { grid-template-columns: 1fr; }
       .wrap { width: min(100% - 30px, 1120px); }
       .brand-link img { width: 112px; }
       section { padding: 56px 0; }
@@ -270,7 +298,22 @@
       <div class="wrap">
         <p class="kicker">Automation zone</p>
         <h2>Automation &amp; AI agent systems</h2>
-        <p class="lead">For companies buried in repeat work. You keep the tools you already use. Custom AI agents on your account build as needed; Brooke designs, reviews, and ships. Production and timelines follow the size of that team, not a timesheet. Built first inside a real operation that went from a 10-truck plan to about 30 trucks, with three full-time people under 40 hours a week.</p>
+        <p class="lead">For companies buried in repeat work. You keep the tools you already use. Custom AI agents on your account build as needed; Brooke designs, reviews, and ships. Production and timelines follow the size of that team, not a timesheet.</p>
+        <div class="proof-strip" aria-label="Proof from a live operation">
+          <div class="proof-stat">
+            <strong>10 → 33 trucks</strong>
+            <span>More than triple the original plan — a 230% increase — with brokerage and outside carriers in the mix.</span>
+          </div>
+          <div class="proof-stat">
+            <strong>~190 hrs → ~105 hrs</strong>
+            <span>Same workload. Weekly hours dropped about 45% while the fleet grew.</span>
+          </div>
+          <div class="proof-stat">
+            <strong>3 people, not 4–5</strong>
+            <span>That is the usual staff for a 33-truck shop this size. The owner week went from about 50 hours to about 25.</span>
+          </div>
+        </div>
+        <p class="hours">Built first inside a real operation, not a lab. The fleet grew. The weekly hours went down.</p>
         <div class="pkg-grid four">
           <article class="pkg">
             <span class="pkg-tag">First control</span>
