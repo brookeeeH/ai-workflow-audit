@@ -194,6 +194,24 @@
       line-height: 1.5;
     }
     .hours { margin-top: 22px; color: var(--muted); }
+    .systems-launched {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 10px 16px;
+      margin: 22px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .systems-launched li {
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fff;
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 750;
+    }
+    .systems-note { margin: 14px 0 0; color: var(--muted); font-size: 15px; }
     footer { padding: 34px 0; color: #cadae8; background: #061e43; }
     .footer-row { display: flex; justify-content: space-between; align-items: center; gap: 24px; }
     .footer-brand { color: #fff; font-size: 23px; font-weight: 900; letter-spacing: .08em; }
@@ -201,14 +219,14 @@
     footer a { color: #9ef6e8; }
     @media (max-width: 980px) {
       .pkg-grid, .pkg-grid.four { grid-template-columns: 1fr 1fr; }
-      .proof-strip, .care-grid { grid-template-columns: 1fr; }
+      .proof-strip, .care-grid, .systems-launched { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 860px) {
       .nav-links a:not(.nav-cta) { display: none; }
       .offer { grid-template-columns: 1fr; }
     }
     @media (max-width: 640px) {
-      .pkg-grid, .pkg-grid.four, .proof-strip, .care-grid { grid-template-columns: 1fr; }
+      .pkg-grid, .pkg-grid.four, .proof-strip, .care-grid, .systems-launched { grid-template-columns: 1fr; }
       .wrap { width: min(100% - 30px, 1120px); }
       .brand-link img { width: 112px; }
       section { padding: 56px 0; }
@@ -235,7 +253,7 @@
       <div class="hero-copy wrap">
         <p class="eyebrow">Building obtainable automation zones</p>
         <h1>Two zones. Clear prices.</h1>
-        <p>Start with the $250 audit. We look at how you actually work, then recommend a website zone, an automation zone, or both. Monthly care and after-hours cost are listed here so you can see the path before we talk.</p>
+        <p>Start with the $250 audit. We look at how you actually work, then recommend a website zone, an automation zone, or both. Prices, monthly care, and after-hours cost are on this page — you do not need a pitch call to see them.</p>
         <div class="hero-actions">
           <a class="button primary" href="index.html#signup">Request a BOAZ Audit</a>
           <a class="button secondary" href="#presence">Website zone</a>
@@ -325,19 +343,28 @@
         <p class="lead">For companies buried in repeat work. You keep the tools you already use. Custom AI agents on your account build as needed; Brooke designs, reviews, and ships. Production and timelines follow the size of that team, not a timesheet.</p>
         <div class="proof-strip" aria-label="Proof from a live transportation company">
           <div class="proof-stat">
-            <strong>8 months, still going</strong>
-            <span>Full-capacity build-out inside a transportation company. Fine-tuning continues.</span>
+            <strong data-live-months="card">8 months, still going</strong>
+            <span>Continuous production on the current agent stack inside a transportation company. Fine-tuning continues. That run is the proof — not the start of the craft.</span>
           </div>
           <div class="proof-stat">
             <strong>+230%</strong>
-            <span>Business and truck count increased while the system was being built.</span>
+            <span>Business and truck count increased while the systems were launched and then improved.</span>
           </div>
           <div class="proof-stat">
             <strong>−45% hours</strong>
-            <span>Total operational weekly hours went down, on a larger book of work.</span>
+            <span>Total operational weekly hours went down, on a larger book of work. Measured at the company, not as a timesheet per tool.</span>
           </div>
         </div>
-        <p class="hours">Built first inside a real transportation company, not a lab.</p>
+        <p class="hours">Built first inside a real transportation company, not a lab. Process systems started years earlier. AI entered the work in 2024. These are the live controls launched and improved in that operation:</p>
+        <ul class="systems-launched" aria-label="Systems launched and improved">
+          <li>Dispatch visibility</li>
+          <li>Load communications</li>
+          <li>EDI intake</li>
+          <li>Payroll prep</li>
+          <li>Margin reporting</li>
+          <li>Live alerting</li>
+        </ul>
+        <p class="systems-note">Hours saved stay at the company number above until a workflow is measured on its own.</p>
         <div class="pkg-grid four">
           <article class="pkg">
             <span class="pkg-tag">First control</span>
@@ -472,6 +499,7 @@
       <p>© <span id="year"></span> BOAZ. Central City, Nebraska. · <a href="index.html">Home</a> · <a href="about.html">About</a></p>
     </div>
   </footer>
+  <script src="proof-clock.js"></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
