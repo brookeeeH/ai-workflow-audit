@@ -26,6 +26,21 @@
       "addressCountry": "US"
     },
     "areaServed": "US",
+    "telephone": "+1-402-765-8550",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+        "opens": "09:00",
+        "closes": "16:30"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Friday",
+        "opens": "09:00",
+        "closes": "12:00"
+      }
+    ],
     "founder": {
       "@type": "Person",
       "name": "Brooke Holz",
@@ -200,6 +215,8 @@
     .footer-brand { color: #fff; font-size: 23px; font-weight: 900; letter-spacing: .08em; }
     footer p { margin: 3px 0 0; }
     footer a { color: #9ef6e8; }
+    .footer-contact { margin-top: 10px; }
+    .footer-contact a { font-weight: 800; }
 
     @media (max-width: 860px) {
       .nav-links a:not(.nav-cta) { display: none; }
@@ -369,7 +386,7 @@
         <div>
           <p class="kicker">Take the first step</p>
           <h2>Tell us what is draining your capacity.</h2>
-          <p class="lead">Send the basic details below. Brooke will review the request and follow up to schedule a conversation if the BOAZ Audit is a fit.</p>
+          <p class="lead">Send the basic details below. Brooke will review the request and follow up to schedule a conversation if the BOAZ Audit is a fit. You can also leave a message at <a href="tel:+14027658550">(402) 765-8550</a> — the form is still the fastest start.</p>
         </div>
         <form class="intake" id="audit-request" action="https://formspree.io/f/xbdverlj" method="POST">
           <input type="hidden" name="_subject" value="BOAZ Audit Request">
@@ -410,7 +427,7 @@
           <div class="submit-row">
             <button class="button dark" type="submit">Send audit request</button>
           </div>
-          <p class="helper">Payment is handled only after the audit is confirmed as a good fit.</p>
+          <p class="helper">Payment is handled only after the audit is confirmed as a good fit. Phone is voicemail: <a href="tel:+14027658550">(402) 765-8550</a>. Desk hours Monday–Thursday 9:00 a.m.–4:30 p.m. Central, Friday 9:00 a.m.–noon. Closed Saturday and Sunday.</p>
         </form>
       </div>
     </section>
@@ -421,6 +438,8 @@
       <div>
         <div class="footer-brand">BOAZ</div>
         <p>Clearer systems. Restored capacity.</p>
+        <p class="footer-contact"><a href="tel:+14027658550">(402) 765-8550</a> · leave a message</p>
+        <p>Mon–Thu 9:00 a.m.–4:30 p.m. Central · Fri 9:00 a.m.–noon · Closed Sat–Sun</p>
       </div>
       <p>© <span id="year"></span> BOAZ. Central City, Nebraska. · <a href="menu.html">Packages</a> · <a href="about.html">About</a></p>
     </div>
